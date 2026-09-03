@@ -230,3 +230,7 @@ node_modules/
 # Azure
 .azure/
 .deployment-outputs.json
+
+# Frontend source wrongly caught by the Python "lib/" and "build/" rules above.
+!src/frontend/src/lib/
+!src/frontend/src/lib/**
