@@ -104,6 +104,10 @@ resource containerApp 'Microsoft.App/containerApps@2024-03-01' = {
               value: modelDeploymentName
             }
             {
+              name: 'MODEL_MAX_CONCURRENCY'
+              value: '6'
+            }
+            {
               name: 'EMBEDDING_DEPLOYMENT_NAME'
               value: embeddingDeploymentName
             }

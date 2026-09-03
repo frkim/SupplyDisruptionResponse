@@ -1,6 +1,7 @@
 import type { GraphNode, NodeResult, NodeState } from '../types';
 import {
   COMPLETION_USD_PER_MILLION,
+  CACHED_PROMPT_USD_PER_MILLION,
   DASH,
   HOSTING_LABEL,
   PROMPT_USD_PER_MILLION,
@@ -130,9 +131,12 @@ export function GovernancePanel({
       </div>
 
       <p className="gov__footnote">
-        Cost is an estimate only, computed at ${PROMPT_USD_PER_MILLION.toFixed(2)} per 1M prompt
-        tokens and ${COMPLETION_USD_PER_MILLION.toFixed(2)} per 1M completion tokens. It is not
-        billing data.
+        Pricing (1M Tokens): Input ${PROMPT_USD_PER_MILLION.toFixed(2)} · Cached Input $
+        {CACHED_PROMPT_USD_PER_MILLION.toFixed(2)} · Output $
+        {COMPLETION_USD_PER_MILLION.toFixed(2)}. Cost is an estimate only, computed at $
+        {PROMPT_USD_PER_MILLION.toFixed(2)} per 1M prompt tokens and $
+        {COMPLETION_USD_PER_MILLION.toFixed(2)} per 1M completion tokens. Cached input is not
+        currently reported separately by the runtime. It is not billing data.
       </p>
     </section>
   );

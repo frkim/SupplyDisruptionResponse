@@ -89,6 +89,7 @@ class NodeResult:
     agent_name: str
     hosting_mode: HostingMode
     state: NodeState = NodeState.PENDING
+    input: str = ""
     narrative: str = ""
     structured: dict[str, Any] = field(default_factory=dict)
     tool_calls: list[ToolCall] = field(default_factory=list)
@@ -107,6 +108,7 @@ class NodeResult:
             "agentName": self.agent_name,
             "hostingMode": self.hosting_mode.value,
             "state": self.state.value,
+            "input": self.input,
             "narrative": self.narrative,
             "structured": self.structured,
             "toolCalls": [t.to_dict() for t in self.tool_calls],

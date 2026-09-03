@@ -16,9 +16,10 @@ interface AgentDetailPanelProps {
   node: GraphNode | null;
   state: NodeState;
   result: NodeResult | null;
+  onClose: () => void;
 }
 
-export function AgentDetailPanel({ node, state, result }: AgentDetailPanelProps) {
+export function AgentDetailPanel({ node, state, result, onClose }: AgentDetailPanelProps) {
   const [structuredOpen, setStructuredOpen] = useState(true);
 
   const structuredText = useMemo(
@@ -44,10 +45,21 @@ export function AgentDetailPanel({ node, state, result }: AgentDetailPanelProps)
   const hasStructured = Boolean(result?.structured && Object.keys(result.structured).length > 0);
 
   return (
-    <section className="card detail">
+    <div className="detail-modal" role="presentation" onMouseDown={(event) => {
+      if (event.target === event.currentTarget) onClose();
+    }}>
+      <section className="card detail detail-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="agent-detail-title">
       <div className="card__head">
-        <h2 className="card__title">Agent detail</h2>
-        <span className={`detail__state detail__state--${state}`}>{STATE_LABEL[state]}</span>
+        <div>
+          <h2 className="card__title" id="agent-detail-title">Execution details</h2>
+          <p className="detail__hint">Input, output, timing, and tool activity for this node.</p>
+        </div>
+        <div className="detail__head-actions">
+          <span className={`detail__state detail__state--${state}`}>{STATE_LABEL[state]}</span>
+          <button type="button" className="icon-button" onClick={onClose} aria-label="Close execution details" title="Close">
+            ×
+          </button>
+        </div>
       </div>
 
       <div className="card__body detail__body">
@@ -70,6 +82,11 @@ export function AgentDetailPanel({ node, state, result }: AgentDetailPanelProps)
           <Metric label="Total tokens" value={formatNumber(result?.totalTokens)} />
         </div>
 
+        <div className="detail__block">
+          <span className="detail__block-title">Input</span>
+          <pre className="detail__json detail__json--input">{result?.input || DASH}</pre>
+        </div>
+
         {result?.error ? (
           <div className="detail__error">
             <span className="detail__block-title">Error</span>
@@ -78,7 +95,7 @@ export function AgentDetailPanel({ node, state, result }: AgentDetailPanelProps)
         ) : null}
 
         <div className="detail__block">
-          <span className="detail__block-title">Narrative</span>
+          <span className="detail__block-title">Output</span>
           {result?.narrative ? (
             <p className="detail__narrative">{result.narrative}</p>
           ) : (
@@ -133,7 +150,8 @@ export function AgentDetailPanel({ node, state, result }: AgentDetailPanelProps)
           )}
         </div>
       </div>
-    </section>
+      </section>
+    </div>
   );
 }
 

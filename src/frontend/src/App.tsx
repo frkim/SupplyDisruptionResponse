@@ -50,6 +50,7 @@ export function App() {
   const [decisionError, setDecisionError] = useState<string | null>(null);
 
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
+  const [inspectorOpen, setInspectorOpen] = useState(false);
   const [startedAt, setStartedAt] = useState<number | null>(null);
   const [elapsedMs, setElapsedMs] = useState(0);
   const [finalDurationMs, setFinalDurationMs] = useState<number | null>(null);
@@ -192,7 +193,10 @@ export function App() {
               state: 'running',
             },
           }));
-          if (!manualSelectionRef.current) setSelectedNodeId(started.nodeId);
+          if (!manualSelectionRef.current) {
+            setSelectedNodeId(started.nodeId);
+            setInspectorOpen(false);
+          }
           appendLog(
             'info',
             'started',
@@ -338,6 +342,7 @@ export function App() {
     setDecision(null);
     setDecisionError(null);
     setSelectedNodeId(null);
+    setInspectorOpen(false);
     setFinalDurationMs(null);
     setStatus('running');
     const now = Date.now();
@@ -384,12 +389,22 @@ export function App() {
     setDecision(null);
     setDecisionError(null);
     setSelectedNodeId(null);
+    setInspectorOpen(false);
     setStartedAt(null);
     setElapsedMs(0);
     setFinalDurationMs(null);
   }, []);
 
   useEffect(() => () => abortRef.current?.abort(), []);
+
+  useEffect(() => {
+    if (!selectedNodeId) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setInspectorOpen(false);
+    };
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [selectedNodeId]);
 
   const handleDecision = useCallback(
     (payload: { optionId: string; approver: string; notes: string }) => {
@@ -426,6 +441,7 @@ export function App() {
   const handleSelectNode = useCallback((nodeId: string) => {
     manualSelectionRef.current = true;
     setSelectedNodeId(nodeId);
+    setInspectorOpen(true);
   }, []);
 
   const showGate = gateOpen || decision !== null;
@@ -481,11 +497,6 @@ export function App() {
             onSelect={gateOpen ? setSelectedOptionId : undefined}
           />
 
-          <AgentDetailPanel
-            node={selectedNode}
-            state={selectedState}
-            result={selectedResult}
-          />
         </div>
 
         <div className="app__col app__col--right">
@@ -498,6 +509,14 @@ export function App() {
           />
         </div>
       </main>
+      {selectedNode && inspectorOpen ? (
+        <AgentDetailPanel
+          node={selectedNode}
+          state={selectedState}
+          result={selectedResult}
+          onClose={() => setInspectorOpen(false)}
+        />
+      ) : null}
     </div>
   );
 }

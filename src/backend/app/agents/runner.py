@@ -90,6 +90,7 @@ async def run_agent(spec: AgentSpec, prompt: str) -> NodeResult:
         node_id=spec.node_id.value,
         agent_name=spec.name,
         hosting_mode=spec.hosting_mode,
+        input=prompt,
     )
     started = time.perf_counter()
     tracer = get_tracer()

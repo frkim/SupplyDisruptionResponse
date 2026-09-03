@@ -78,6 +78,7 @@ export interface NodeResult {
   agentName?: string;
   hostingMode?: HostingMode;
   state?: NodeState;
+  input?: string;
   narrative?: string;
   structured?: Record<string, unknown>;
   toolCalls?: ToolCall[];

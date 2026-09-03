@@ -74,9 +74,10 @@ export function formatClock(at: number): string {
     .join(':');
 }
 
-/** Indicative Azure OpenAI pricing used purely for the governance estimate. */
-export const PROMPT_USD_PER_MILLION = 2.5;
-export const COMPLETION_USD_PER_MILLION = 10.0;
+/** GPT-4o pricing used purely for the governance estimate, per 1M tokens. */
+export const PROMPT_USD_PER_MILLION = 0.75;
+export const CACHED_PROMPT_USD_PER_MILLION = 0.08;
+export const COMPLETION_USD_PER_MILLION = 4.5;
 
 export function estimateCostUsd(promptTokens = 0, completionTokens = 0): number {
   return (

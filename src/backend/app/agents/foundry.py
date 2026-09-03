@@ -21,6 +21,7 @@ from typing import Any
 
 from ..config import get_settings
 from ..contracts import HostingMode, ToolCall
+from ..llm import MODEL_REQUEST_GATE
 from .definitions import AGENTS, AgentSpec
 from .tools import handlers_for, schemas_for
 
@@ -64,6 +65,7 @@ def _fingerprint(spec: AgentSpec, knowledge_connection: str | None) -> str:
     payload = json.dumps(
         {
             "model": settings.model_deployment,
+            "generationParameters": "default" if not settings.supports_temperature else "temperature-0.2",
             "instructions": spec.instructions,
             "tools": sorted(spec.tools),
             "mcp": settings.mcp_server_url,
@@ -238,14 +240,16 @@ async def ensure_agent(spec: AgentSpec) -> dict[str, Any] | None:
             "created": False,
         }
     else:
+        definition_kwargs = {
+            "model": settings.model_deployment,
+            "instructions": spec.instructions,
+            "tools": _tool_definitions(spec, knowledge_connection),
+        }
+        if settings.supports_temperature:
+            definition_kwargs["temperature"] = 0.2
         created = await client.agents.create_version(
             agent_name=name,
-            definition=PromptAgentDefinition(
-                model=settings.model_deployment,
-                instructions=spec.instructions,
-                tools=_tool_definitions(spec, knowledge_connection),
-                temperature=0.2,
-            ),
+            definition=PromptAgentDefinition(**definition_kwargs),
             description=spec.description[:512],
             metadata={
                 _FINGERPRINT_KEY: fingerprint,
@@ -356,7 +360,8 @@ async def run_prompt_agent(
         if previous_id:
             kwargs["previous_response_id"] = previous_id
 
-        response = await client.responses.create(**kwargs)
+        async with MODEL_REQUEST_GATE:
+            response = await client.responses.create(**kwargs)
 
         if getattr(response, "usage", None):
             usage["prompt"] += getattr(response.usage, "input_tokens", 0) or 0
@@ -387,11 +392,12 @@ async def run_prompt_agent(
             )
         payload = outputs
 
-    final = await client.responses.create(
-        input="Provide your final JSON answer now.",
-        extra_body=reference,
-        previous_response_id=previous_id,
-    )
+    async with MODEL_REQUEST_GATE:
+        final = await client.responses.create(
+            input="Provide your final JSON answer now.",
+            extra_body=reference,
+            previous_response_id=previous_id,
+        )
     if getattr(final, "usage", None):
         usage["prompt"] += getattr(final.usage, "input_tokens", 0) or 0
         usage["completion"] += getattr(final.usage, "output_tokens", 0) or 0

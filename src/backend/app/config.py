@@ -23,6 +23,7 @@ class Settings:
         self.openai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT", "").rstrip("/")
         self.ai_project_endpoint = os.getenv("AZURE_AI_PROJECT_ENDPOINT", "").rstrip("/")
         self.model_deployment = os.getenv("MODEL_DEPLOYMENT_NAME", "gpt-4o")
+        self.model_max_concurrency = int(os.getenv("MODEL_MAX_CONCURRENCY", "6"))
         self.embedding_deployment = os.getenv("EMBEDDING_DEPLOYMENT_NAME", "text-embedding-3-large")
         self.api_version = os.getenv("AZURE_OPENAI_API_VERSION", "2024-10-21")
 
@@ -67,6 +68,10 @@ class Settings:
     @property
     def has_openai(self) -> bool:
         return bool(self.openai_endpoint)
+
+    @property
+    def supports_temperature(self) -> bool:
+        return not self.model_deployment.lower().startswith(("gpt-5", "o1", "o3", "o4"))
 
     @property
     def has_cosmos(self) -> bool:

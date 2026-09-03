@@ -228,6 +228,13 @@
   fill: #46506a;
 }
 
+:root[data-theme='light'] .graph__node-box,
+:root[data-theme='light'] .graph__node--pending .graph__node-box,
+:root[data-theme='light'] .graph__node--skipped .graph__node-box {
+  fill: #f5f7fb;
+  stroke: var(--line-strong);
+}
+
 /* State: awaiting */
 .graph__node--awaiting .graph__node-box {
   fill: rgba(167, 139, 250, 0.12);

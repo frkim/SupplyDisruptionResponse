@@ -9,6 +9,7 @@ import json
 import logging
 import re
 import time
+import asyncio
 from typing import Any, Awaitable, Callable
 
 from azure.identity import DefaultAzureCredential, get_bearer_token_provider
@@ -20,6 +21,9 @@ from .contracts import ToolCall
 logger = logging.getLogger(__name__)
 
 ToolHandler = Callable[..., Awaitable[Any]]
+
+# Bound fan-out so the configured deployment is not overwhelmed by a workflow burst.
+MODEL_REQUEST_GATE = asyncio.Semaphore(get_settings().model_max_concurrency)
 
 _JSON_FENCE = re.compile(r"```(?:json)?\s*(.*?)\s*```", re.DOTALL)
 
@@ -102,15 +106,17 @@ class ChatEngine:
             kwargs: dict[str, Any] = {
                 "model": self._settings.model_deployment,
                 "messages": messages,
-                "temperature": 0.2,
             }
+            if self._settings.supports_temperature:
+                kwargs["temperature"] = 0.2
             if tools:
                 kwargs["tools"] = tools
                 kwargs["tool_choice"] = "auto"
             if force_json and not tools:
                 kwargs["response_format"] = {"type": "json_object"}
 
-            response = await self._client.chat.completions.create(**kwargs)
+            async with MODEL_REQUEST_GATE:
+                response = await self._client.chat.completions.create(**kwargs)
 
             if response.usage:
                 usage["prompt"] += response.usage.prompt_tokens or 0
@@ -174,11 +180,14 @@ class ChatEngine:
                 )
 
         # Tool budget exhausted: ask once more for a final answer without tools.
-        final = await self._client.chat.completions.create(
-            model=self._settings.model_deployment,
-            messages=messages + [{"role": "user", "content": "Provide your final JSON answer now."}],
-            temperature=0.2,
-        )
+        final_kwargs: dict[str, Any] = {
+            "model": self._settings.model_deployment,
+            "messages": messages + [{"role": "user", "content": "Provide your final JSON answer now."}],
+        }
+        if self._settings.supports_temperature:
+            final_kwargs["temperature"] = 0.2
+        async with MODEL_REQUEST_GATE:
+            final = await self._client.chat.completions.create(**final_kwargs)
         if final.usage:
             usage["prompt"] += final.usage.prompt_tokens or 0
             usage["completion"] += final.usage.completion_tokens or 0
