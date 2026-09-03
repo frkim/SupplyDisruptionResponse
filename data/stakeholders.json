@@ -1,0 +1,112 @@
+[
+  {
+    "id": "STK-001",
+    "name": "Camille Aubert",
+    "role": "Group Chief Supply Chain Officer",
+    "function": "Executive",
+    "email": "camille.aubert@lactovia.example",
+    "region": "EU",
+    "decisionAuthority": "approve",
+    "escalationLevel": 3,
+    "notes": "Executive sponsor for any force-majeure response. Sole authority to approve an emergency supplier derogation, an air-freight exception, or any allocation that cuts a key account below 70% of committed volume."
+  },
+  {
+    "id": "STK-002",
+    "name": "Henrik Sørensen",
+    "role": "Group Procurement Director",
+    "function": "Procurement",
+    "email": "henrik.sorensen@lactovia.example",
+    "region": "EU",
+    "decisionAuthority": "approve",
+    "escalationLevel": 2,
+    "notes": "Owns the supplier panel and the alternate-sourcing decision. Approves spot purchases up to EUR 500,000 without executive sign-off. Led the 2024 emergency purchase from SUP-EU-023 and holds the existing framework agreement."
+  },
+  {
+    "id": "STK-003",
+    "name": "Marta Ruiz",
+    "role": "Senior Category Buyer, Hydrocolloids & Additives",
+    "function": "Procurement",
+    "email": "marta.ruiz@lactovia.example",
+    "region": "EU",
+    "decisionAuthority": "recommend",
+    "escalationLevel": 1,
+    "notes": "Day-to-day owner of the SUP-EU-014 relationship and the pectin category. First point of contact for capacity confirmation from SUP-EU-023 and for reopening the SUP-LATAM-004 audit."
+  },
+  {
+    "id": "STK-004",
+    "name": "Thomas Berger",
+    "role": "Supply Chain Director, Continental Europe",
+    "function": "Supply Chain",
+    "email": "thomas.berger@lactovia.example",
+    "region": "EU",
+    "decisionAuthority": "approve",
+    "escalationLevel": 2,
+    "notes": "Approves inter-plant stock transfers and any break of the 48-hour frozen production schedule beyond 24 hours. Owns the reallocation decision between PLANT-ES-01, PLANT-FR-03 and the three affected sites."
+  },
+  {
+    "id": "STK-005",
+    "name": "Aisha Haddad",
+    "role": "Group Demand & Supply Planning Manager",
+    "function": "Supply Chain",
+    "email": "aisha.haddad@lactovia.example",
+    "region": "EU",
+    "decisionAuthority": "recommend",
+    "escalationLevel": 1,
+    "notes": "Builds the constrained-ingredient production plan and the contribution-margin-per-kilogram ranking that drives which SKUs are decampaigned. Maintains the depletion model that produced signal SIG-2026-0903-001."
+  },
+  {
+    "id": "STK-006",
+    "name": "Pierre Lemoine",
+    "role": "Plant Manager, Rennes",
+    "function": "Manufacturing",
+    "email": "pierre.lemoine@lactovia.example",
+    "region": "FR",
+    "decisionAuthority": "recommend",
+    "escalationLevel": 1,
+    "notes": "Runs the most exposed site at 12 days of cover and the group's only Kids pouch line. Can authorise a schedule freeze break of up to 24 hours on his own authority. Must be consulted on any changeover-heavy decampaigning plan."
+  },
+  {
+    "id": "STK-007",
+    "name": "Katrin Vogel",
+    "role": "Manufacturing Director, DACH & Benelux",
+    "function": "Manufacturing",
+    "email": "katrin.vogel@lactovia.example",
+    "region": "DE",
+    "decisionAuthority": "approve",
+    "escalationLevel": 2,
+    "notes": "Approves overtime and weekend shifts at Bremen and Ghent, including the EUR 22,000 Saturday shift that adds roughly 38,000 units at PLANT-DE-02."
+  },
+  {
+    "id": "STK-008",
+    "name": "Dr. Elena Novak",
+    "role": "Group Quality & Regulatory Affairs Director",
+    "function": "Quality & Regulatory",
+    "email": "elena.novak@lactovia.example",
+    "region": "EU",
+    "decisionAuthority": "approve",
+    "escalationLevel": 2,
+    "notes": "Co-approver with the executive sponsor for any emergency supplier derogation. Owns the E440 labelling assessment, the organic-compatibility ruling on amidated LM pectin, and the sensory and shelf-life re-validation gate for any reformulation."
+  },
+  {
+    "id": "STK-009",
+    "name": "Julien Mercier",
+    "role": "Group Finance Director, Operations",
+    "function": "Finance",
+    "email": "julien.mercier@lactovia.example",
+    "region": "EU",
+    "decisionAuthority": "approve",
+    "escalationLevel": 2,
+    "notes": "Quantifies revenue at risk, margin erosion and penalty exposure, and co-approves air freight with the Sustainability Director. Owns the business case for accepting the 18% SUP-EU-023 price premium."
+  },
+  {
+    "id": "STK-010",
+    "name": "Sophie Delacroix",
+    "role": "Commercial Director, Key Accounts",
+    "function": "Commercial",
+    "email": "sophie.delacroix@lactovia.example",
+    "region": "EU",
+    "decisionAuthority": "approve",
+    "escalationLevel": 2,
+    "notes": "Owns the customer allocation decision and the 48-hour notification rule. Signs off any customer cut below 60% of committed volume and coordinates the National Account Managers for CUST-001, CUST-004, CUST-007 and CUST-011. Also decides on promotional suspension and media spend redirection."
+  }
+]

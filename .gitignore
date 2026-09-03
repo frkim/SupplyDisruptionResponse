@@ -216,3 +216,17 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Node / frontend
+node_modules/
+.vite/
+
+# Environment and secrets
+.env
+.env.local
+*.key
+*.pem
+
+# Azure
+.azure/
+.deployment-outputs.json

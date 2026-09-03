@@ -1,0 +1,131 @@
+[
+  {
+    "id": "PLB-001",
+    "name": "Emergency Alternate Supplier Activation",
+    "category": "supplier_switch",
+    "description": "Activates a qualified or conditionally qualified alternate supplier to replace a disrupted primary source. Covers capacity confirmation, spot pricing negotiation, emergency derogation where the alternate is not fully qualified, and first-delivery expediting. This is the only mitigation that actually creates new supply rather than redistributing or reducing demand, so it is the backbone of any force-majeure response.",
+    "applicableWhen": "The primary supplier cannot deliver for longer than the current days of cover, and at least one alternate exists with a lead time shorter than the projected disruption duration. Preferred first-wave action whenever a fully qualified alternate is available.",
+    "steps": [
+      { "sequence": 1, "action": "Confirm the primary supplier's force majeure scope, expected restart date and contractual position; obtain written notice.", "ownerFunction": "Procurement", "durationDays": 1 },
+      { "sequence": 2, "action": "Rank alternates by lead time first, then qualification status, then landed cost and carbon intensity. Reject any alternate whose lead time exceeds the projected disruption duration.", "ownerFunction": "Procurement", "durationDays": 1 },
+      { "sequence": 3, "action": "Request firm capacity confirmation and spot pricing from the top two alternates, including minimum order quantity and first-available-ship date.", "ownerFunction": "Procurement", "durationDays": 2 },
+      { "sequence": 4, "action": "Verify organic operator certificate, allergen status and specification equivalence for every affected SKU; flag any SKU that the alternate cannot legally serve.", "ownerFunction": "Quality & Regulatory", "durationDays": 2 },
+      { "sequence": 5, "action": "Where the alternate is not fully qualified, raise an emergency derogation with a documented force-majeure justification; obtain Quality Director and executive sponsor approval.", "ownerFunction": "Quality & Regulatory", "durationDays": 3 },
+      { "sequence": 6, "action": "Approve the spot purchase and the price premium against the quantified revenue-at-risk business case.", "ownerFunction": "Finance", "durationDays": 1 },
+      { "sequence": 7, "action": "Place the order, nominate the carrier, and set up goods-in requalification with positive release at the receiving plant.", "ownerFunction": "Procurement", "durationDays": 1 },
+      { "sequence": 8, "action": "Open a parallel workstream to convert the emergency source into a permanently qualified second source within 90 days.", "ownerFunction": "Procurement", "durationDays": 60 }
+    ],
+    "typicalCostEur": 385000,
+    "typicalLeadTimeDays": 21,
+    "riskLevel": "medium",
+    "successRatePct": 82,
+    "requiredApprovals": ["Group Procurement Director", "Group Quality & Regulatory Affairs Director", "Group Finance Director, Operations"],
+    "regulatoryConsiderations": "The alternate must hold equivalent food-safety certification and, for organic-labelled SKUs, a valid EU organic operator certificate under Regulation (EU) 2018/848. Non-EU alternates require organic equivalence recognition, which several Asian and Latin American suppliers do not hold. An emergency derogation is capped at 90 days, excludes organic and Kids-branded lines, and mandates retrospective full qualification. Specification equivalence must be confirmed before order placement or the label declaration may become inaccurate."
+  },
+  {
+    "id": "PLB-002",
+    "name": "Inter-Plant Inventory Reallocation",
+    "category": "inventory_reallocation",
+    "description": "Moves ingredient stock from plants with surplus cover to plants approaching depletion. Fast, cheap and regulatorily light within the EU single market, but it redistributes rather than creates supply and degrades the donor site's position. Best used as a bridge while alternate supply is being secured.",
+    "applicableWhen": "A gap of 5 to 15 days must be bridged, at least one site holds surplus stock above safety stock plus 10 days of cover, and the ingredient is shelf-stable enough to survive transit. Never appropriate for short-shelf-life chilled inputs.",
+    "steps": [
+      { "sequence": 1, "action": "Identify donor sites with cover above the 10-day post-transfer floor and compute the transferable quantity per site.", "ownerFunction": "Supply Chain", "durationDays": 1 },
+      { "sequence": 2, "action": "Exclude partially consumed sacks and any lot with under 90 days remaining shelf life unless it will be consumed within 14 days.", "ownerFunction": "Quality & Regulatory", "durationDays": 1 },
+      { "sequence": 3, "action": "Model the post-transfer days of cover at both donor and receiver; confirm no site falls below safety stock.", "ownerFunction": "Supply Chain", "durationDays": 1 },
+      { "sequence": 4, "action": "Approve the transfer and raise stock transport orders in the ERP with batch determination and lot traceability records.", "ownerFunction": "Supply Chain", "durationDays": 1 },
+      { "sequence": 5, "action": "Book transport, issue the CMR consignment note and the intra-Community VAT transfer document.", "ownerFunction": "Supply Chain", "durationDays": 1 },
+      { "sequence": 6, "action": "Execute goods-in requalification at the receiving plant: identity check, certificate of analysis review, retained sample. Use QA positive release to compress to 4 hours where the gap is urgent.", "ownerFunction": "Quality & Regulatory", "durationDays": 1 }
+    ],
+    "typicalCostEur": 47000,
+    "typicalLeadTimeDays": 6,
+    "riskLevel": "low",
+    "successRatePct": 88,
+    "requiredApprovals": ["Supply Chain Director, Continental Europe"],
+    "regulatoryConsiderations": "Intra-EU movements are in free circulation so no customs entry is required between the French, German, Belgian and Spanish sites, but lot traceability must be maintained under Regulation (EC) No 178/2002 Article 18 and a CMR consignment note is required. Ambient hydrocolloid powders travel dry at 15 to 25 degrees Celsius below 60% relative humidity and need no reefer. Finished chilled goods require an unbroken 2 to 6 degrees Celsius chain with continuous logging; any excursion above 8 degrees Celsius for more than 30 minutes triggers a quality hold."
+  },
+  {
+    "id": "PLB-003",
+    "name": "Constrained-Ingredient Production Rescheduling",
+    "category": "production_rescheduling",
+    "description": "Rebuilds the production plan to maximise the value extracted from a limited quantity of a constrained ingredient. SKUs are ranked by contribution margin per kilogram of the constrained input rather than by revenue, and low-ranking SKUs are decampaigned to extend the runway of high-ranking ones.",
+    "applicableWhen": "The constrained ingredient will not be replenished before depletion and the SKU portfolio has meaningful variation in ingredient intensity and margin. Most effective when combined with alternate sourcing, since it buys time rather than solving the shortage.",
+    "steps": [
+      { "sequence": 1, "action": "Compute contribution margin per kilogram of constrained ingredient for every affected SKU and rank descending.", "ownerFunction": "Supply Chain", "durationDays": 1 },
+      { "sequence": 2, "action": "Overlay contractual commitments, penalty exposure and promotional windows; a low-ranking SKU under a punitive clause may still need protecting.", "ownerFunction": "Commercial", "durationDays": 1 },
+      { "sequence": 3, "action": "Draft the revised campaign plan, accounting for the fact that breaking a campaign typically costs two changeovers rather than one.", "ownerFunction": "Manufacturing", "durationDays": 2 },
+      { "sequence": 4, "action": "Quantify changeover cost, lost units and the additional days of cover bought; validate against the 48-hour frozen schedule horizon and the 14 to 16 hour incubation cycle.", "ownerFunction": "Manufacturing", "durationDays": 1 },
+      { "sequence": 5, "action": "Approve the schedule freeze break and publish the revised plan to sites and customer service.", "ownerFunction": "Supply Chain", "durationDays": 1 }
+    ],
+    "typicalCostEur": 62000,
+    "typicalLeadTimeDays": 5,
+    "riskLevel": "low",
+    "successRatePct": 84,
+    "requiredApprovals": ["Supply Chain Director, Continental Europe", "Manufacturing Director, DACH & Benelux"],
+    "regulatoryConsiderations": "Organic production must run first in a campaign or follow a validated full clean-in-place cycle, which takes 8 hours and costs approximately EUR 16,000 and cannot be reversed within the same shift. Allergen sequencing rules constrain campaign order independently of the ingredient constraint. Batch minimums of roughly 7,200 litres apply because fermentation tanks cannot run below 60% fill without pH and texture drift."
+  },
+  {
+    "id": "PLB-004",
+    "name": "Alternative Hydrocolloid Reformulation",
+    "category": "product_substitution",
+    "description": "Reformulates affected products onto an alternative gelling system when the primary hydrocolloid is unavailable for an extended period. Covers bench work, pilot trials, sensory validation, shelf-life confirmation, industrial validation and the resulting labelling changes. Structurally valuable but far too slow for a first-wave response.",
+    "applicableWhen": "The disruption is expected to exceed 45 days, alternate sourcing cannot cover full requirement, and the affected SKUs are not organic certified and carry no claim that the substitute would break. Never appropriate as the sole answer to a depletion horizon under 30 days.",
+    "steps": [
+      { "sequence": 1, "action": "Screen candidate systems against the SKU's claims: check organic status, vegetarian, Halal and Kosher claims, and clean-label positioning before any bench work begins.", "ownerFunction": "Quality & Regulatory", "durationDays": 2 },
+      { "sequence": 2, "action": "Bench trial the candidate formulations, including calcium salt addition and fruit preparation rebuild where LM pectin is used.", "ownerFunction": "Quality & Regulatory", "durationDays": 5 },
+      { "sequence": 3, "action": "Pilot plant scale-up to confirm process robustness at production shear and temperature.", "ownerFunction": "Manufacturing", "durationDays": 3 },
+      { "sequence": 4, "action": "Sensory triangle test with 40 panellists; acceptance requires no significant difference at p<0.05 or a hedonic score within 0.5 points of control on a 9-point scale.", "ownerFunction": "Quality & Regulatory", "durationDays": 7 },
+      { "sequence": 5, "action": "Accelerated shelf-life study with a real-time confirmation run in parallel; syneresis and set firmness measured at day 7, 14, 21 and 28.", "ownerFunction": "Quality & Regulatory", "durationDays": 14 },
+      { "sequence": 6, "action": "Industrial validation run and quality release.", "ownerFunction": "Manufacturing", "durationDays": 2 },
+      { "sequence": 7, "action": "Update ingredient declaration and artwork, or apply for a 90-day over-sticker derogation if print plates cannot be turned in time.", "ownerFunction": "Quality & Regulatory", "durationDays": 5 }
+    ],
+    "typicalCostEur": 310000,
+    "typicalLeadTimeDays": 38,
+    "riskLevel": "high",
+    "successRatePct": 44,
+    "requiredApprovals": ["Group Quality & Regulatory Affairs Director", "Commercial Director, Key Accounts", "Group Chief Supply Chain Officer"],
+    "regulatoryConsiderations": "Amidated pectin E440(ii) is not permitted in EU organic production under Regulation (EU) 2018/848 Annex V, so organic-certified SKUs are excluded outright. A switch from E440(i) to E440(ii) changes the ingredient declaration under Regulation (EU) No 1169/2011 and requires artwork rework with a 6 to 8 week print-plate lead time; the alternative is an approved over-sticker derogation valid for 90 days. Gelatin is bovine-derived and destroys vegetarian, Halal and Kosher claims. Modified starch requires an E1442 or modified starch declaration that conflicts with clean-label positioning. Customers with a specification-change notice period, such as a 30-day clause, must be notified before the change reaches their volume."
+  },
+  {
+    "id": "PLB-005",
+    "name": "Constrained Supply Customer Allocation",
+    "category": "customer_allocation",
+    "description": "Rations available supply across customers using a documented, non-discriminatory formula, then executes the communication protocol. Applied when total mitigations still leave supply below committed demand. Minimises penalty exposure and delisting risk rather than physically solving the shortage.",
+    "applicableWhen": "Projected available supply is below total committed volume after all supply-side mitigations have been applied. Must be invoked before customers discover the shortfall themselves.",
+    "steps": [
+      { "sequence": 1, "action": "Compute available supply by SKU and week under the agreed production plan.", "ownerFunction": "Supply Chain", "durationDays": 1 },
+      { "sequence": 2, "action": "Calculate each customer's fair share from trailing 13-week offtake, then apply the tier multiplier of 1.15 for key accounts, 1.0 for growth and 0.85 for standard.", "ownerFunction": "Commercial", "durationDays": 1 },
+      { "sequence": 3, "action": "Compute penalty exposure per customer in euros, including per-unit penalties and any service-level rebate triggered by falling below the contractual fill rate.", "ownerFunction": "Finance", "durationDays": 1 },
+      { "sequence": 4, "action": "Overlay delisting risk, weighting accounts with imminent range reviews and private-label termination clauses, and adjust the allocation within policy bounds.", "ownerFunction": "Commercial", "durationDays": 1 },
+      { "sequence": 5, "action": "Obtain approval for any customer below 60% of committed volume and any key account below 70%.", "ownerFunction": "Executive", "durationDays": 1 },
+      { "sequence": 6, "action": "Execute the 48-hour notification protocol: National Account Manager by phone for key accounts before any written communication, Customer Service for standard accounts. Include affected SKUs, allocated percentage, expected duration, recovery date and any alternative SKU offer.", "ownerFunction": "Commercial", "durationDays": 2 },
+      { "sequence": 7, "action": "Suspend or reweight promotional campaigns on constrained SKUs and agree media spend cancellation or redirection with each retailer.", "ownerFunction": "Commercial", "durationDays": 3 }
+    ],
+    "typicalCostEur": 640000,
+    "typicalLeadTimeDays": 4,
+    "riskLevel": "high",
+    "successRatePct": 66,
+    "requiredApprovals": ["Commercial Director, Key Accounts", "Group Finance Director, Operations", "Group Chief Supply Chain Officer"],
+    "regulatoryConsiderations": "Allocation between competing retailers must follow a documented, objective and non-discriminatory rule to avoid competition-law exposure; ad hoc allocation decisions create legal risk independent of contractual penalties. Recovery dates communicated to customers must be supportable by the confirmed supply plan, since unsupported commitments can constitute misleading commercial practice. Promotional suspension normally requires 21 days notice to the retailer where contractually possible."
+  },
+  {
+    "id": "PLB-006",
+    "name": "Regulatory and Labelling Response",
+    "category": "regulatory_response",
+    "description": "Assesses and executes the regulatory workstream triggered by any sourcing or formulation change: additive compliance, purity criteria verification, label declaration impact, organic admissibility, and national authority notification. Runs in parallel with every other playbook and gates their execution.",
+    "applicableWhen": "Any change of ingredient supplier, grade, or formulation affecting a product placed on the EU market. Always invoked; never optional.",
+    "steps": [
+      { "sequence": 1, "action": "Classify the change: same additive and same grade from a new supplier, different grade of the same additive, or a different additive altogether. This determines whether a label change is required.", "ownerFunction": "Quality & Regulatory", "durationDays": 1 },
+      { "sequence": 2, "action": "Verify the new material against Regulation (EU) No 231/2012 purity criteria and obtain certificates of analysis on three consecutive production lots covering pesticide residues and heavy metals.", "ownerFunction": "Quality & Regulatory", "durationDays": 5 },
+      { "sequence": 3, "action": "Assess organic admissibility under Regulation (EU) 2018/848 and confirm the supplier holds a valid organic operator certificate or recognised equivalence.", "ownerFunction": "Quality & Regulatory", "durationDays": 2 },
+      { "sequence": 4, "action": "Determine the label impact under Regulation (EU) No 1169/2011, including ingredient declaration, allergen statement, QUID and any claim that becomes unsupportable.", "ownerFunction": "Quality & Regulatory", "durationDays": 3 },
+      { "sequence": 5, "action": "Where artwork must change, choose between new print plates at 6 to 8 weeks and EUR 14,000 per SKU, or an over-sticker derogation valid for 90 days.", "ownerFunction": "Quality & Regulatory", "durationDays": 3 },
+      { "sequence": 6, "action": "Notify national authorities where required and update the technical file, specification and declaration of compliance.", "ownerFunction": "Quality & Regulatory", "durationDays": 5 }
+    ],
+    "typicalCostEur": 48000,
+    "typicalLeadTimeDays": 12,
+    "riskLevel": "medium",
+    "successRatePct": 91,
+    "requiredApprovals": ["Group Quality & Regulatory Affairs Director"],
+    "regulatoryConsiderations": "Pectin is authorised as E440 under Regulation (EC) No 1333/2008 at quantum satis in fermented milk and dessert categories, so an additive authorisation question does not arise; the issues are purity criteria, organic admissibility and label accuracy. A change of supplier for the same E440(i) grade normally requires no label change provided specification and allergen status are identical. National contacts are DGCCRF in France, the competent Länder authorities in Germany and FAVV/AFSCA in Belgium. Placing product on the market with an inaccurate ingredient declaration is an offence in all three jurisdictions regardless of the commercial pressure that caused it."
+  }
+]

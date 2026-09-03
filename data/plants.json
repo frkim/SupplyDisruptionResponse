@@ -1,0 +1,165 @@
+[
+  {
+    "id": "PLANT-FR-01",
+    "name": "Lactovia Rennes",
+    "city": "Rennes",
+    "country": "France",
+    "region": "FR",
+    "productionLines": [
+      {
+        "lineId": "FR01-L1",
+        "name": "Cup Line 1 - 125g Multipack",
+        "skusProduced": ["SKU-YOG-001", "SKU-YOG-002"],
+        "capacityUnitsPerDay": 96000,
+        "utilizationPct": 88
+      },
+      {
+        "lineId": "FR01-L2",
+        "name": "Premium Cup Line - 150g Layered",
+        "skusProduced": ["SKU-YOG-004"],
+        "capacityUnitsPerDay": 54000,
+        "utilizationPct": 82
+      },
+      {
+        "lineId": "FR01-L3",
+        "name": "Kids Pouch Line",
+        "skusProduced": ["SKU-YOG-006", "SKU-YOG-007"],
+        "capacityUnitsPerDay": 72000,
+        "utilizationPct": 91
+      },
+      {
+        "lineId": "FR01-L4",
+        "name": "Dessert Cup Line",
+        "skusProduced": ["SKU-DES-003"],
+        "capacityUnitsPerDay": 38000,
+        "utilizationPct": 74
+      }
+    ],
+    "certifications": ["IFS Food Higher Level", "FSSC 22000", "Organic EU", "Halal"],
+    "weeklyCapacityUnits": 1610000,
+    "changeoverHours": 4.5,
+    "notes": "Group headquarters site and largest plant. Holds the only Kids pouch filling capability in the group on line FR01-L3, which makes it a single point of failure for the Kids pouch range. Highest pectin consumption at 310 kg per day and therefore the first plant to deplete in the current incident, at 12 days of cover."
+  },
+  {
+    "id": "PLANT-DE-02",
+    "name": "Lactovia Bremen",
+    "city": "Bremen",
+    "country": "Germany",
+    "region": "DE",
+    "productionLines": [
+      {
+        "lineId": "DE02-L1",
+        "name": "Cup Line 1 - 125g Multipack",
+        "skusProduced": ["SKU-YOG-009"],
+        "capacityUnitsPerDay": 84000,
+        "utilizationPct": 79
+      },
+      {
+        "lineId": "DE02-L2",
+        "name": "Premium & Protein Cup Line",
+        "skusProduced": ["SKU-YOG-005", "SKU-YOG-008"],
+        "capacityUnitsPerDay": 61000,
+        "utilizationPct": 86
+      },
+      {
+        "lineId": "DE02-L3",
+        "name": "Dessert Line",
+        "skusProduced": ["SKU-DES-002"],
+        "capacityUnitsPerDay": 42000,
+        "utilizationPct": 71
+      }
+    ],
+    "certifications": ["IFS Food Higher Level", "FSSC 22000", "Organic EU"],
+    "weeklyCapacityUnits": 1099000,
+    "changeoverHours": 5.0,
+    "notes": "Serves the German market and part of Benelux. Saturday overtime shifts are available at approximately EUR 22,000 per shift, adding roughly 38,000 units. Pectin consumption 240 kg per day, 15 days of cover in the current incident."
+  },
+  {
+    "id": "PLANT-BE-01",
+    "name": "Lactovia Ghent",
+    "city": "Ghent",
+    "country": "Belgium",
+    "region": "BE",
+    "productionLines": [
+      {
+        "lineId": "BE01-L1",
+        "name": "Cup Line 1 - 125g Multipack",
+        "skusProduced": ["SKU-YOG-001", "SKU-YOG-003"],
+        "capacityUnitsPerDay": 68000,
+        "utilizationPct": 83
+      },
+      {
+        "lineId": "BE01-L2",
+        "name": "Premium Cup Line",
+        "skusProduced": ["SKU-YOG-010"],
+        "capacityUnitsPerDay": 36000,
+        "utilizationPct": 64
+      },
+      {
+        "lineId": "BE01-L3",
+        "name": "Chilled Dessert Line",
+        "skusProduced": ["SKU-DES-001", "SKU-DES-004"],
+        "capacityUnitsPerDay": 47000,
+        "utilizationPct": 80
+      }
+    ],
+    "certifications": ["IFS Food Higher Level", "BRCGS Food Safety", "Organic EU", "Kosher"],
+    "weeklyCapacityUnits": 1057000,
+    "changeoverHours": 4.0,
+    "notes": "Belgian site with dual French and Dutch language packaging capability, and the group's chilled dessert centre of excellence. Also holds the 90-day frozen safety stock of starter culture ING-CUL-201 for the whole group. Pectin consumption 185 kg per day, 18 days of cover, the longest runway of the three affected plants."
+  },
+  {
+    "id": "PLANT-FR-03",
+    "name": "Lactovia Lyon",
+    "city": "Lyon",
+    "country": "France",
+    "region": "FR",
+    "productionLines": [
+      {
+        "lineId": "FR03-L1",
+        "name": "Carton Milk Line 1L",
+        "skusProduced": ["SKU-MLK-001", "SKU-MLK-002"],
+        "capacityUnitsPerDay": 145000,
+        "utilizationPct": 76
+      },
+      {
+        "lineId": "FR03-L2",
+        "name": "Plain Yogurt Line",
+        "skusProduced": ["SKU-YOG-011"],
+        "capacityUnitsPerDay": 58000,
+        "utilizationPct": 69
+      }
+    ],
+    "certifications": ["IFS Food Higher Level", "FSSC 22000", "Organic EU"],
+    "weeklyCapacityUnits": 1421000,
+    "changeoverHours": 3.0,
+    "notes": "Fresh milk and plain yogurt site with no fruit preparation capability, so it produces none of the 14 affected SKUs. Holds 6,200 kg of ING-PEC-450 as a regional buffer for occasional co-packing, which makes it a donor candidate for inventory reallocation to Rennes on an 850 km, 1-2 day lane."
+  },
+  {
+    "id": "PLANT-ES-01",
+    "name": "Lactovia Zaragoza",
+    "city": "Zaragoza",
+    "country": "Spain",
+    "region": "ES",
+    "productionLines": [
+      {
+        "lineId": "ES01-L1",
+        "name": "Carton Milk Line 1L",
+        "skusProduced": ["SKU-MLK-003"],
+        "capacityUnitsPerDay": 88000,
+        "utilizationPct": 61
+      },
+      {
+        "lineId": "ES01-L2",
+        "name": "Dessert & Skyr Line",
+        "skusProduced": ["SKU-DES-005", "SKU-YOG-012"],
+        "capacityUnitsPerDay": 51000,
+        "utilizationPct": 72
+      }
+    ],
+    "certifications": ["IFS Food Higher Level", "BRCGS Food Safety", "Halal"],
+    "weeklyCapacityUnits": 973000,
+    "changeoverHours": 3.5,
+    "notes": "Iberian site producing lactose-free milk, chocolate mousse on gelatin and plain skyr, none of which use ING-PEC-450. Acts as the group central hydrocolloid buffer store with 11,500 kg of pectin on hand, making it the largest donor for reallocation. The Zaragoza to Rennes lane is 1,050 km and 2 days at approximately EUR 2,900 per full truck."
+  }
+]

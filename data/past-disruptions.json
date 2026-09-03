@@ -1,0 +1,227 @@
+[
+  {
+    "id": "DISR-2024-014",
+    "title": "Valencia pectin feedstock quarantine - 78-day HM-450 shortage",
+    "ingredientId": "ING-PEC-450",
+    "supplierId": "SUP-EU-014",
+    "startDate": "2024-03-11",
+    "endDate": "2024-05-28",
+    "durationDays": 78,
+    "rootCause": "Elevated pesticide residue was detected in the Valencian navel-orange peel crop supplied to SUP-EU-014. Approximately 410 tonnes of raw peel were quarantined and ultimately rejected, halting HM-450 extraction for eleven weeks. The failure was upstream of the supplier's own quality system and was not predicted by the incoming goods testing regime. The organisational root cause was Lactovia's decision to single-source a critical hydrocolloid with no qualified second supplier, logged as RISK-SC-2023-011 and accepted rather than mitigated.",
+    "severity": "high",
+    "impactedSkus": [
+      "SKU-YOG-001",
+      "SKU-YOG-002",
+      "SKU-YOG-004",
+      "SKU-YOG-005",
+      "SKU-YOG-006",
+      "SKU-YOG-007",
+      "SKU-YOG-008",
+      "SKU-YOG-009",
+      "SKU-DES-001",
+      "SKU-DES-002",
+      "SKU-DES-003"
+    ],
+    "revenueAtRiskEur": 8400000,
+    "revenueLostEur": 2150000,
+    "mitigationsApplied": [
+      {
+        "action": "Emergency spot purchase of 62 tonnes from SUP-EU-023 Rheinland Hydrocolloids at a 24% price premium; first delivery landed 19 days after the decision.",
+        "outcome": "Covered roughly 55% of group requirement from week four onward and became the basis for SUP-EU-023's permanent qualification. The 19-day gap before first delivery was the single largest driver of lost revenue.",
+        "effectivenessScore": 82,
+        "costEur": 385000
+      },
+      {
+        "action": "Inventory reallocation of 21 tonnes from PLANT-ES-01 and PLANT-FR-03 into PLANT-FR-01, executed over six days across the Zaragoza-Rennes and Lyon-Rennes lanes.",
+        "outcome": "Bridged a nine-day gap at the most exposed plant and prevented a complete line stop at Rennes. Limited by the fact that reallocation redistributes rather than creates supply; donor cover fell to 11 days at Lyon.",
+        "effectivenessScore": 71,
+        "costEur": 47000
+      },
+      {
+        "action": "Partial reformulation of three Lactovia Kids SKUs onto low-methoxyl pectin ING-PEC-220 with a calcium salt addition and rebuilt fruit preparation.",
+        "outcome": "Sensory panel rejected two of the three variants for soft, elastic set and syneresis at day 21. Only SKU-YOG-007 reached market and it took 31 days from bench trial to industrial release, by which time alternate supply had already landed. Two of the three attempts were also technically inadmissible on the organic-certified SKUs, which was discovered late.",
+        "effectivenessScore": 44,
+        "costEur": 310000
+      },
+      {
+        "action": "Customer allocation across key accounts at 78% of committed volume, applied without a pre-agreed allocation rule.",
+        "outcome": "Contained the shortfall but the first ten days were consumed by internal disagreement over the allocation basis. Direct contractual penalties of EUR 640,000 were incurred, and one private-label listing was placed under formal review at the following range review.",
+        "effectivenessScore": 66,
+        "costEur": 640000
+      }
+    ],
+    "lessonsLearned": [
+      "Single-sourcing a critical hydrocolloid was the root organisational failure, not the supplier's quality incident. RISK-SC-2023-011 identified the exposure a year in advance and it was accepted rather than mitigated.",
+      "Qualification of a second source must be completed before a crisis, not during one. The 19 days lost waiting for SUP-EU-023's first delivery cost approximately EUR 1.4 million of the EUR 2.15 million total.",
+      "Reformulation is too slow to serve as a first-wave mitigation. A 31-day best case and a 44 out of 100 effectiveness score mean it belongs in the second wave or in structural risk reduction.",
+      "Organic certification constraints must be checked before reformulation work starts. Two of the three Kids reformulation attempts were inadmissible under Regulation (EU) 2018/848 because amidated pectin E440(ii) is not permitted in organic production, and this was discovered after bench work had begun.",
+      "Early and honest customer communication materially reduced penalty exposure. Accounts notified within 48 hours negotiated partial substitution; accounts that discovered the shortfall themselves invoked penalties in full.",
+      "The absence of a pre-agreed allocation rule was the most expensive process failure. Ten days of internal argument produced no better answer than the fair-share formula that was eventually adopted and subsequently written into policy."
+    ],
+    "postMortemRef": "PM-2024-014"
+  },
+  {
+    "id": "DISR-2025-006",
+    "title": "Starter culture cold-chain failure in transit from Hørsholm",
+    "ingredientId": "ING-CUL-201",
+    "supplierId": "SUP-EU-045",
+    "startDate": "2025-02-04",
+    "endDate": "2025-02-21",
+    "durationDays": 17,
+    "rootCause": "A reefer unit failure on a Hørsholm to Bremen consignment allowed the frozen DVS culture to rise above minus 18 degrees Celsius for an estimated 9 hours. The entire 340 kg shipment was quarantined and destroyed. Because YC-X11 is a deliberate strategic single source with no qualified alternate strain, there was no substitution path.",
+    "severity": "medium",
+    "impactedSkus": ["SKU-YOG-001", "SKU-YOG-009", "SKU-YOG-011", "SKU-YOG-003"],
+    "revenueAtRiskEur": 3100000,
+    "revenueLostEur": 180000,
+    "mitigationsApplied": [
+      {
+        "action": "Drew down the 90-day frozen safety stock held at PLANT-BE-01 and redistributed 210 kg to Bremen and Rennes within 48 hours.",
+        "outcome": "Fully covered the gap with no line stops. This is the clearest demonstration in the group's history that a deliberate strategic safety stock on a single-source critical ingredient works.",
+        "effectivenessScore": 94,
+        "costEur": 12000
+      },
+      {
+        "action": "Expedited replacement shipment from SUP-EU-045 with dual-probe temperature logging and a nominated carrier.",
+        "outcome": "Replacement landed on day 11 against an 18-day standard lead time. Supplier absorbed the expedite cost under the framework agreement.",
+        "effectivenessScore": 88,
+        "costEur": 0
+      }
+    ],
+    "lessonsLearned": [
+      "A properly sized strategic safety stock on a single-source critical ingredient converts a potential shutdown into a routine logistics event. The 90-day culture buffer cost roughly EUR 40,000 per year to hold and saved approximately EUR 2.9 million of exposure in one incident.",
+      "Continuous temperature logging with dual probes should be contractual for all frozen and chilled inbound lanes, not optional. The nine-hour excursion was only detectable because a single probe happened to be fitted.",
+      "The contrast with the pectin category is instructive: pectin is also single-source and critical, but carries no equivalent strategic buffer."
+    ],
+    "postMortemRef": "PM-2025-006"
+  },
+  {
+    "id": "DISR-2025-011",
+    "title": "Printed lidding foil shortage after supplier print-plate fire",
+    "ingredientId": "ING-PKG-900",
+    "supplierId": "SUP-EU-019",
+    "startDate": "2025-06-17",
+    "endDate": "2025-07-29",
+    "durationDays": 42,
+    "rootCause": "A fire in the flexographic printing hall at SUP-EU-019 destroyed the print plates for 22 SKUs and took the primary lidding line out of service for six weeks. Cup supply was unaffected; only printed lidding foil was constrained.",
+    "severity": "medium",
+    "impactedSkus": ["SKU-YOG-001", "SKU-YOG-002", "SKU-YOG-004", "SKU-DES-003", "SKU-MLK-001"],
+    "revenueAtRiskEur": 5600000,
+    "revenueLostEur": 410000,
+    "mitigationsApplied": [
+      {
+        "action": "Switched to generic unbranded lidding foil with an approved over-sticker derogation valid for 90 days, agreed with DGCCRF and the Belgian FAVV.",
+        "outcome": "Kept all five SKUs in production with a visible cosmetic degradation. Two retailers accepted immediately, one required a price concession. This established the over-sticker derogation as a proven regulatory tool.",
+        "effectivenessScore": 79,
+        "costEur": 224000
+      },
+      {
+        "action": "Activated SUP-EU-045 as secondary lidding supplier under existing qualification.",
+        "outcome": "Delivered branded foil for the three highest-volume SKUs from day 26. Confirmed the value of holding a qualified but dormant second source in a non-critical category.",
+        "effectivenessScore": 85,
+        "costEur": 96000
+      }
+    ],
+    "lessonsLearned": [
+      "The 90-day over-sticker derogation is a fast, regulator-accepted workaround for label constraints and should be pre-agreed rather than negotiated during an incident.",
+      "Packaging print plates are a hidden single point of failure with a 6 to 8 week replacement lead time; a duplicate plate set now costs EUR 14,000 per SKU and is held for the top ten SKUs only.",
+      "Qualified-but-dormant second sources in non-critical categories proved cheap insurance and activated in under four weeks."
+    ],
+    "postMortemRef": "PM-2025-011"
+  },
+  {
+    "id": "DISR-2025-019",
+    "title": "Raw milk collection disruption during Brittany transport strike",
+    "ingredientId": "ING-MLK-001",
+    "supplierId": "SUP-EU-031",
+    "startDate": "2025-09-22",
+    "endDate": "2025-09-30",
+    "durationDays": 8,
+    "rootCause": "A regional haulage strike blocked farm collection routes across Ille-et-Vilaine and Morbihan for eight days. Raw milk has a three-day shelf life and cannot be stockpiled, so the constraint was immediate and absolute at Rennes and Lyon.",
+    "severity": "high",
+    "impactedSkus": ["SKU-MLK-001", "SKU-MLK-002", "SKU-YOG-011", "SKU-YOG-001", "SKU-YOG-002"],
+    "revenueAtRiskEur": 4800000,
+    "revenueLostEur": 1320000,
+    "mitigationsApplied": [
+      {
+        "action": "Redirected collection through unaffected southern routes and increased the SUP-EU-007 Leeuwarden call-off for skimmed milk powder to partially substitute in recombined bases.",
+        "outcome": "Recovered approximately 45% of lost intake. Recombined bases were only acceptable on non-organic SKUs, which limited the scope.",
+        "effectivenessScore": 58,
+        "costEur": 168000
+      },
+      {
+        "action": "Transferred finished goods from PLANT-ES-01 and PLANT-FR-03 to cover French retail depots under a strict 2 to 6 degrees Celsius cold chain.",
+        "outcome": "Protected shelf presence at the two largest accounts for six of the eight days. Two pallets were written off after a temperature excursion above 8 degrees Celsius on the Zaragoza lane.",
+        "effectivenessScore": 63,
+        "costEur": 89000
+      }
+    ],
+    "lessonsLearned": [
+      "Short-shelf-life dairy inputs cannot be protected by inventory strategy; only route redundancy and a second qualified collection region work.",
+      "Finished-goods transfer is materially riskier than ingredient transfer because of cold-chain exposure. Two pallets were lost to a single excursion, and any excursion above 8 degrees Celsius for more than 30 minutes triggers a quality hold.",
+      "Recombined bases are a viable partial substitute but are inadmissible on organic-certified SKUs, which halved their usefulness."
+    ],
+    "postMortemRef": "PM-2025-019"
+  },
+  {
+    "id": "DISR-2026-003",
+    "title": "Stevia lead-time extension from Kerala monsoon freight disruption",
+    "ingredientId": "ING-SWT-105",
+    "supplierId": "SUP-APAC-002",
+    "startDate": "2026-06-08",
+    "endDate": "2026-07-14",
+    "durationDays": 36,
+    "rootCause": "Exceptional monsoon flooding closed the Kochi to Nhava Sheva road corridor intermittently for five weeks, extending SUP-APAC-002 outbound lead times from a contracted 42 days to an observed 58 days across three consecutive shipments.",
+    "severity": "low",
+    "impactedSkus": ["SKU-YOG-006", "SKU-YOG-007", "SKU-YOG-008", "SKU-DES-004"],
+    "revenueAtRiskEur": 1900000,
+    "revenueLostEur": 0,
+    "mitigationsApplied": [
+      {
+        "action": "Pulled forward the qualified SUP-NA-012 call-off for steviol glycosides at a 12% price premium.",
+        "outcome": "No production impact whatsoever. The incident was absorbed entirely because a second source was already qualified and a 104-day stock cover existed at Bremen.",
+        "effectivenessScore": 96,
+        "costEur": 41000
+      }
+    ],
+    "lessonsLearned": [
+      "This is the counterexample to the pectin situation: same category of long-lead-time overseas dependency, but a pre-qualified alternate and adequate cover meant zero revenue loss against EUR 1.9 million at risk.",
+      "The cost of maintaining the SUP-NA-012 qualification is roughly EUR 18,000 per year in audit and testing. It returned that many times over in a single incident.",
+      "Watch-list signals with confidence below 0.65 are still worth acting on when the mitigation is cheap and reversible."
+    ],
+    "postMortemRef": "PM-2026-003"
+  },
+  {
+    "id": "DISR-2023-021",
+    "title": "Gelatin supply interruption following TSE documentation gap",
+    "ingredientId": "ING-GEL-110",
+    "supplierId": "SUP-EU-007",
+    "startDate": "2023-10-02",
+    "endDate": "2023-11-13",
+    "durationDays": 42,
+    "rootCause": "An audit finding at SUP-EU-007 identified incomplete TSE/BSE traceability documentation under Regulation (EC) No 1069/2009 for three hide lots. Lactovia Quality placed all affected gelatin on hold pending supplier remediation, which took six weeks.",
+    "severity": "medium",
+    "impactedSkus": ["SKU-DES-005"],
+    "revenueAtRiskEur": 2100000,
+    "revenueLostEur": 620000,
+    "mitigationsApplied": [
+      {
+        "action": "Activated SUP-NA-012 as alternate gelatin source under existing qualification, shipping by sea with a 38-day lead time.",
+        "outcome": "Restored supply on day 40, close to the natural resolution of the incident. Too slow to prevent a four-week production gap at Zaragoza.",
+        "effectivenessScore": 51,
+        "costEur": 143000
+      },
+      {
+        "action": "Attempted reformulation of the chocolate mousse onto a starch and LM pectin system.",
+        "outcome": "Rejected at sensory. The panel scored the starch variant 2.1 points below control on a 9-point hedonic scale for cohesive, pasty mouthfeel. Work abandoned after 12 days.",
+        "effectivenessScore": 18,
+        "costEur": 74000
+      }
+    ],
+    "lessonsLearned": [
+      "A qualified alternate is only useful if its lead time is shorter than the disruption. A 38-day sea lane against a 42-day incident delivered almost no benefit and still cost EUR 143,000.",
+      "Alternate source selection must weigh lead time at least as heavily as price and qualification status. This is directly relevant to choosing between SUP-EU-023 at 21 days and SUP-LATAM-004 at 55 days.",
+      "Texture-defining hydrocolloids are the hardest ingredients to substitute. Two separate attempts across 2023 and 2024 both failed sensory, scoring 18 and 44 out of 100."
+    ],
+    "postMortemRef": "PM-2023-021"
+  }
+]

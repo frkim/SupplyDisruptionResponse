@@ -1,0 +1,310 @@
+[
+  {
+    "id": "PRUN-2026-001",
+    "plantId": "PLANT-FR-01",
+    "lineId": "FR01-L1",
+    "skuId": "SKU-YOG-001",
+    "scheduledStart": "2026-09-07",
+    "scheduledEnd": "2026-09-10",
+    "plannedUnits": 288000,
+    "status": "scheduled",
+    "ingredientRequirements": [
+      { "ingredientId": "ING-PEC-450", "quantityKg": 620 },
+      { "ingredientId": "ING-MLK-001", "quantityKg": 84000 },
+      { "ingredientId": "ING-CUL-201", "quantityKg": 42 },
+      { "ingredientId": "ING-SUG-100", "quantityKg": 5200 },
+      { "ingredientId": "ING-PKG-900", "quantityKg": 4600 }
+    ]
+  },
+  {
+    "id": "PRUN-2026-002",
+    "plantId": "PLANT-FR-01",
+    "lineId": "FR01-L1",
+    "skuId": "SKU-YOG-002",
+    "scheduledStart": "2026-09-11",
+    "scheduledEnd": "2026-09-13",
+    "plannedUnits": 156000,
+    "status": "at_risk",
+    "ingredientRequirements": [
+      { "ingredientId": "ING-PEC-450", "quantityKg": 340 },
+      { "ingredientId": "ING-MLK-001", "quantityKg": 45000 },
+      { "ingredientId": "ING-CUL-201", "quantityKg": 23 },
+      { "ingredientId": "ING-SUG-100", "quantityKg": 2900 },
+      { "ingredientId": "ING-PKG-900", "quantityKg": 2500 }
+    ]
+  },
+  {
+    "id": "PRUN-2026-003",
+    "plantId": "PLANT-FR-01",
+    "lineId": "FR01-L2",
+    "skuId": "SKU-YOG-004",
+    "scheduledStart": "2026-09-14",
+    "scheduledEnd": "2026-09-17",
+    "plannedUnits": 172000,
+    "status": "at_risk",
+    "ingredientRequirements": [
+      { "ingredientId": "ING-PEC-450", "quantityKg": 410 },
+      { "ingredientId": "ING-MLK-001", "quantityKg": 39000 },
+      { "ingredientId": "ING-CRM-003", "quantityKg": 11500 },
+      { "ingredientId": "ING-CUL-201", "quantityKg": 26 },
+      { "ingredientId": "ING-SUG-100", "quantityKg": 3400 },
+      { "ingredientId": "ING-PKG-900", "quantityKg": 3100 }
+    ]
+  },
+  {
+    "id": "PRUN-2026-004",
+    "plantId": "PLANT-FR-01",
+    "lineId": "FR01-L3",
+    "skuId": "SKU-YOG-006",
+    "scheduledStart": "2026-09-08",
+    "scheduledEnd": "2026-09-12",
+    "plannedUnits": 244000,
+    "status": "scheduled",
+    "ingredientRequirements": [
+      { "ingredientId": "ING-PEC-450", "quantityKg": 530 },
+      { "ingredientId": "ING-MLK-001", "quantityKg": 51000 },
+      { "ingredientId": "ING-CUL-201", "quantityKg": 31 },
+      { "ingredientId": "ING-SUG-100", "quantityKg": 2600 },
+      { "ingredientId": "ING-SWT-105", "quantityKg": 18 },
+      { "ingredientId": "ING-PKG-900", "quantityKg": 2900 }
+    ]
+  },
+  {
+    "id": "PRUN-2026-005",
+    "plantId": "PLANT-FR-01",
+    "lineId": "FR01-L3",
+    "skuId": "SKU-YOG-007",
+    "scheduledStart": "2026-09-16",
+    "scheduledEnd": "2026-09-19",
+    "plannedUnits": 157000,
+    "status": "at_risk",
+    "ingredientRequirements": [
+      { "ingredientId": "ING-PEC-450", "quantityKg": 345 },
+      { "ingredientId": "ING-MLK-001", "quantityKg": 33000 },
+      { "ingredientId": "ING-CUL-201", "quantityKg": 20 },
+      { "ingredientId": "ING-SUG-100", "quantityKg": 1700 },
+      { "ingredientId": "ING-SWT-105", "quantityKg": 12 },
+      { "ingredientId": "ING-PKG-900", "quantityKg": 1900 }
+    ]
+  },
+  {
+    "id": "PRUN-2026-006",
+    "plantId": "PLANT-FR-01",
+    "lineId": "FR01-L4",
+    "skuId": "SKU-DES-003",
+    "scheduledStart": "2026-09-21",
+    "scheduledEnd": "2026-09-23",
+    "plannedUnits": 96000,
+    "status": "at_risk",
+    "ingredientRequirements": [
+      { "ingredientId": "ING-PEC-450", "quantityKg": 290 },
+      { "ingredientId": "ING-MLK-001", "quantityKg": 24000 },
+      { "ingredientId": "ING-SUG-100", "quantityKg": 2200 },
+      { "ingredientId": "ING-PKG-900", "quantityKg": 1500 }
+    ]
+  },
+  {
+    "id": "PRUN-2026-007",
+    "plantId": "PLANT-FR-01",
+    "lineId": "FR01-L1",
+    "skuId": "SKU-YOG-001",
+    "scheduledStart": "2026-10-05",
+    "scheduledEnd": "2026-10-09",
+    "plannedUnits": 320000,
+    "status": "at_risk",
+    "ingredientRequirements": [
+      { "ingredientId": "ING-PEC-450", "quantityKg": 690 },
+      { "ingredientId": "ING-MLK-001", "quantityKg": 93000 },
+      { "ingredientId": "ING-CUL-201", "quantityKg": 47 },
+      { "ingredientId": "ING-SUG-100", "quantityKg": 5800 },
+      { "ingredientId": "ING-PKG-900", "quantityKg": 5100 }
+    ]
+  },
+  {
+    "id": "PRUN-2026-008",
+    "plantId": "PLANT-DE-02",
+    "lineId": "DE02-L1",
+    "skuId": "SKU-YOG-009",
+    "scheduledStart": "2026-09-07",
+    "scheduledEnd": "2026-09-11",
+    "plannedUnits": 203000,
+    "status": "scheduled",
+    "ingredientRequirements": [
+      { "ingredientId": "ING-PEC-450", "quantityKg": 445 },
+      { "ingredientId": "ING-MLK-001", "quantityKg": 59000 },
+      { "ingredientId": "ING-CUL-201", "quantityKg": 30 },
+      { "ingredientId": "ING-SUG-100", "quantityKg": 3700 },
+      { "ingredientId": "ING-PKG-900", "quantityKg": 3200 }
+    ]
+  },
+  {
+    "id": "PRUN-2026-009",
+    "plantId": "PLANT-DE-02",
+    "lineId": "DE02-L2",
+    "skuId": "SKU-YOG-005",
+    "scheduledStart": "2026-09-14",
+    "scheduledEnd": "2026-09-16",
+    "plannedUnits": 94000,
+    "status": "scheduled",
+    "ingredientRequirements": [
+      { "ingredientId": "ING-PEC-450", "quantityKg": 225 },
+      { "ingredientId": "ING-MLK-001", "quantityKg": 21000 },
+      { "ingredientId": "ING-CRM-003", "quantityKg": 6300 },
+      { "ingredientId": "ING-CUL-201", "quantityKg": 14 },
+      { "ingredientId": "ING-SUG-100", "quantityKg": 1900 },
+      { "ingredientId": "ING-PKG-900", "quantityKg": 1700 }
+    ]
+  },
+  {
+    "id": "PRUN-2026-010",
+    "plantId": "PLANT-DE-02",
+    "lineId": "DE02-L2",
+    "skuId": "SKU-YOG-008",
+    "scheduledStart": "2026-09-17",
+    "scheduledEnd": "2026-09-19",
+    "plannedUnits": 138000,
+    "status": "at_risk",
+    "ingredientRequirements": [
+      { "ingredientId": "ING-PEC-450", "quantityKg": 355 },
+      { "ingredientId": "ING-MLK-002", "quantityKg": 8900 },
+      { "ingredientId": "ING-CUL-201", "quantityKg": 19 },
+      { "ingredientId": "ING-SWT-105", "quantityKg": 21 },
+      { "ingredientId": "ING-PKG-900", "quantityKg": 2400 }
+    ]
+  },
+  {
+    "id": "PRUN-2026-011",
+    "plantId": "PLANT-DE-02",
+    "lineId": "DE02-L3",
+    "skuId": "SKU-DES-002",
+    "scheduledStart": "2026-09-22",
+    "scheduledEnd": "2026-09-24",
+    "plannedUnits": 87000,
+    "status": "at_risk",
+    "ingredientRequirements": [
+      { "ingredientId": "ING-PEC-450", "quantityKg": 215 },
+      { "ingredientId": "ING-CRM-003", "quantityKg": 9400 },
+      { "ingredientId": "ING-MLK-002", "quantityKg": 4100 },
+      { "ingredientId": "ING-SUG-100", "quantityKg": 1800 },
+      { "ingredientId": "ING-PKG-900", "quantityKg": 1400 }
+    ]
+  },
+  {
+    "id": "PRUN-2026-012",
+    "plantId": "PLANT-DE-02",
+    "lineId": "DE02-L1",
+    "skuId": "SKU-YOG-009",
+    "scheduledStart": "2026-10-12",
+    "scheduledEnd": "2026-10-16",
+    "plannedUnits": 246000,
+    "status": "at_risk",
+    "ingredientRequirements": [
+      { "ingredientId": "ING-PEC-450", "quantityKg": 540 },
+      { "ingredientId": "ING-MLK-001", "quantityKg": 71000 },
+      { "ingredientId": "ING-CUL-201", "quantityKg": 36 },
+      { "ingredientId": "ING-SUG-100", "quantityKg": 4500 },
+      { "ingredientId": "ING-PKG-900", "quantityKg": 3900 }
+    ]
+  },
+  {
+    "id": "PRUN-2026-013",
+    "plantId": "PLANT-BE-01",
+    "lineId": "BE01-L1",
+    "skuId": "SKU-YOG-003",
+    "scheduledStart": "2026-09-08",
+    "scheduledEnd": "2026-09-11",
+    "plannedUnits": 121000,
+    "status": "scheduled",
+    "ingredientRequirements": [
+      { "ingredientId": "ING-PEC-450", "quantityKg": 265 },
+      { "ingredientId": "ING-MLK-001", "quantityKg": 35000 },
+      { "ingredientId": "ING-CUL-201", "quantityKg": 18 },
+      { "ingredientId": "ING-SUG-100", "quantityKg": 2200 },
+      { "ingredientId": "ING-PKG-900", "quantityKg": 1900 }
+    ]
+  },
+  {
+    "id": "PRUN-2026-014",
+    "plantId": "PLANT-BE-01",
+    "lineId": "BE01-L1",
+    "skuId": "SKU-YOG-001",
+    "scheduledStart": "2026-09-14",
+    "scheduledEnd": "2026-09-17",
+    "plannedUnits": 124000,
+    "status": "in_progress",
+    "ingredientRequirements": [
+      { "ingredientId": "ING-PEC-450", "quantityKg": 270 },
+      { "ingredientId": "ING-MLK-001", "quantityKg": 36000 },
+      { "ingredientId": "ING-CUL-201", "quantityKg": 18 },
+      { "ingredientId": "ING-SUG-100", "quantityKg": 2300 },
+      { "ingredientId": "ING-PKG-900", "quantityKg": 2000 }
+    ]
+  },
+  {
+    "id": "PRUN-2026-015",
+    "plantId": "PLANT-BE-01",
+    "lineId": "BE01-L2",
+    "skuId": "SKU-YOG-010",
+    "scheduledStart": "2026-09-18",
+    "scheduledEnd": "2026-09-19",
+    "plannedUnits": 38000,
+    "status": "at_risk",
+    "ingredientRequirements": [
+      { "ingredientId": "ING-PEC-450", "quantityKg": 95 },
+      { "ingredientId": "ING-MLK-001", "quantityKg": 8600 },
+      { "ingredientId": "ING-CRM-003", "quantityKg": 2500 },
+      { "ingredientId": "ING-CUL-201", "quantityKg": 6 },
+      { "ingredientId": "ING-SUG-100", "quantityKg": 780 },
+      { "ingredientId": "ING-PKG-900", "quantityKg": 690 }
+    ]
+  },
+  {
+    "id": "PRUN-2026-016",
+    "plantId": "PLANT-BE-01",
+    "lineId": "BE01-L3",
+    "skuId": "SKU-DES-001",
+    "scheduledStart": "2026-09-21",
+    "scheduledEnd": "2026-09-24",
+    "plannedUnits": 112000,
+    "status": "at_risk",
+    "ingredientRequirements": [
+      { "ingredientId": "ING-PEC-450", "quantityKg": 280 },
+      { "ingredientId": "ING-CRM-003", "quantityKg": 13400 },
+      { "ingredientId": "ING-MLK-001", "quantityKg": 9800 },
+      { "ingredientId": "ING-SUG-100", "quantityKg": 2400 },
+      { "ingredientId": "ING-FLV-500", "quantityKg": 9 },
+      { "ingredientId": "ING-PKG-900", "quantityKg": 1800 }
+    ]
+  },
+  {
+    "id": "PRUN-2026-017",
+    "plantId": "PLANT-FR-03",
+    "lineId": "FR03-L1",
+    "skuId": "SKU-MLK-001",
+    "scheduledStart": "2026-09-07",
+    "scheduledEnd": "2026-09-13",
+    "plannedUnits": 620000,
+    "status": "scheduled",
+    "ingredientRequirements": [
+      { "ingredientId": "ING-MLK-001", "quantityKg": 638000 },
+      { "ingredientId": "ING-PKG-900", "quantityKg": 14300 }
+    ]
+  },
+  {
+    "id": "PRUN-2026-018",
+    "plantId": "PLANT-ES-01",
+    "lineId": "ES01-L2",
+    "skuId": "SKU-DES-005",
+    "scheduledStart": "2026-11-02",
+    "scheduledEnd": "2026-11-05",
+    "plannedUnits": 152000,
+    "status": "scheduled",
+    "ingredientRequirements": [
+      { "ingredientId": "ING-GEL-110", "quantityKg": 1820 },
+      { "ingredientId": "ING-CRM-003", "quantityKg": 16800 },
+      { "ingredientId": "ING-MLK-002", "quantityKg": 5400 },
+      { "ingredientId": "ING-SUG-100", "quantityKg": 3900 },
+      { "ingredientId": "ING-PKG-900", "quantityKg": 2500 }
+    ]
+  }
+]

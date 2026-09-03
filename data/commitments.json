@@ -1,0 +1,167 @@
+[
+  {
+    "id": "COM-2026-001",
+    "customerId": "CUST-001",
+    "skuId": "SKU-YOG-001",
+    "committedUnits": 1240000,
+    "deliveryDate": "2026-09-28",
+    "penaltyPerUnitEur": 0.85,
+    "contractRef": "CTR-FR-CAR-2026",
+    "status": "firm",
+    "notes": "Rolling four-week firm commitment on the group's highest-volume SKU. Full non-delivery exposure is EUR 1,054,000 in direct penalty before any service-level rebate. Produced at both PLANT-FR-01 and PLANT-BE-01, so it is the only affected commitment with dual-plant coverage."
+  },
+  {
+    "id": "COM-2026-002",
+    "customerId": "CUST-001",
+    "skuId": "SKU-YOG-004",
+    "committedUnits": 384000,
+    "deliveryDate": "2026-09-25",
+    "penaltyPerUnitEur": 0.85,
+    "contractRef": "CTR-FR-CAR-2026",
+    "status": "at_risk",
+    "notes": "PLANT-FR-01 depletes pectin on 2026-09-15, eight working days before this delivery. Flagged at risk on 2026-09-03. Highest-margin yogurt in the portfolio at 38.2%, so both revenue and margin exposure are material."
+  },
+  {
+    "id": "COM-2026-003",
+    "customerId": "CUST-001",
+    "skuId": "SKU-YOG-006",
+    "committedUnits": 512000,
+    "deliveryDate": "2026-10-05",
+    "penaltyPerUnitEur": 0.85,
+    "contractRef": "CTR-FR-CAR-2026",
+    "status": "at_risk",
+    "notes": "Kids organic pouch produced only on FR01-L3. Organic certification blocks the amidated LM pectin route, so this commitment can only be protected by alternate sourcing or reallocation, not by reformulation."
+  },
+  {
+    "id": "COM-2026-004",
+    "customerId": "CUST-002",
+    "skuId": "SKU-YOG-001",
+    "committedUnits": 890000,
+    "deliveryDate": "2026-09-30",
+    "penaltyPerUnitEur": 0.72,
+    "contractRef": "CTR-FR-LEC-2026",
+    "status": "firm",
+    "notes": "E.Leclerc accepted a plain-yogurt substitution during the 2024 shortage and the account team believes a partial swap to SKU-YOG-011 is negotiable again if raised before 2026-09-10."
+  },
+  {
+    "id": "COM-2026-005",
+    "customerId": "CUST-002",
+    "skuId": "SKU-YOG-004",
+    "committedUnits": 268000,
+    "deliveryDate": "2026-10-12",
+    "penaltyPerUnitEur": 0.72,
+    "contractRef": "CTR-FR-LEC-2026",
+    "status": "at_risk",
+    "notes": "Delivery falls well beyond the PLANT-FR-01 depletion date and depends entirely on securing alternate supply from SUP-EU-023 within the 21-day lead time."
+  },
+  {
+    "id": "COM-2026-006",
+    "customerId": "CUST-003",
+    "skuId": "SKU-YOG-007",
+    "committedUnits": 142000,
+    "deliveryDate": "2026-10-02",
+    "penaltyPerUnitEur": 0.0,
+    "contractRef": "CTR-FR-ITM-2026",
+    "status": "forecast",
+    "notes": "No penalty clause and forecast rather than firm status, which makes this the cheapest volume to cut. Offset by a 2027 range-expansion negotiation the commercial team is protecting."
+  },
+  {
+    "id": "COM-2026-007",
+    "customerId": "CUST-004",
+    "skuId": "SKU-YOG-009",
+    "committedUnits": 720000,
+    "deliveryDate": "2026-09-29",
+    "penaltyPerUnitEur": 1.05,
+    "contractRef": "CTR-DE-REW-2026",
+    "status": "at_risk",
+    "notes": "Harshest branded penalty clause in the portfolio. Full non-delivery exposure is EUR 756,000 in direct penalty plus a 4% quarterly rebate if fill rate drops below 97%. PLANT-DE-02 depletes on 2026-09-18."
+  },
+  {
+    "id": "COM-2026-008",
+    "customerId": "CUST-004",
+    "skuId": "SKU-DES-002",
+    "committedUnits": 216000,
+    "deliveryDate": "2026-10-08",
+    "penaltyPerUnitEur": 1.05,
+    "contractRef": "CTR-DE-REW-2026",
+    "status": "at_risk",
+    "notes": "Not organic certified, so this is one of the few at-risk commitments where an LM pectin reformulation is technically permitted, subject to the 31 to 45 day re-validation critical path."
+  },
+  {
+    "id": "COM-2026-009",
+    "customerId": "CUST-005",
+    "skuId": "SKU-YOG-005",
+    "committedUnits": 348000,
+    "deliveryDate": "2026-09-26",
+    "penaltyPerUnitEur": 0.68,
+    "contractRef": "CTR-DE-EDK-2026",
+    "status": "firm",
+    "notes": "Regional buying structure across seven desks means allocation notification takes roughly 24 hours longer than for a centralised account. Must be started early in the 48-hour notification window."
+  },
+  {
+    "id": "COM-2026-010",
+    "customerId": "CUST-006",
+    "skuId": "SKU-YOG-009",
+    "committedUnits": 164000,
+    "deliveryDate": "2026-10-15",
+    "penaltyPerUnitEur": 0.0,
+    "contractRef": "CTR-DE-KFL-2026",
+    "status": "forecast",
+    "notes": "No penalty clause, but price-led buying behaviour and low switching cost mean a sustained out-of-stock carries genuine competitor-substitution risk rather than a financial penalty."
+  },
+  {
+    "id": "COM-2026-011",
+    "customerId": "CUST-007",
+    "skuId": "SKU-DES-001",
+    "committedUnits": 298000,
+    "deliveryDate": "2026-10-01",
+    "penaltyPerUnitEur": 0.95,
+    "contractRef": "CTR-BE-DEL-2026",
+    "status": "at_risk",
+    "notes": "Highest-margin SKU in the portfolio at 41.3%. Carries an on-pack vegetarian claim, so gelatin substitution is not available. PLANT-BE-01 depletes on 2026-09-21, the latest of the three sites."
+  },
+  {
+    "id": "COM-2026-012",
+    "customerId": "CUST-007",
+    "skuId": "SKU-YOG-003",
+    "committedUnits": 224000,
+    "deliveryDate": "2026-09-24",
+    "penaltyPerUnitEur": 0.95,
+    "contractRef": "CTR-BE-DEL-2026",
+    "status": "firm",
+    "notes": "Deliverable within the 18-day Ghent runway if the BE01-L1 campaign is protected, which is the main argument for decampaigning SKU-YOG-010 and SKU-DES-004 instead."
+  },
+  {
+    "id": "COM-2026-013",
+    "customerId": "CUST-009",
+    "skuId": "SKU-YOG-001",
+    "committedUnits": 186000,
+    "deliveryDate": "2026-09-22",
+    "penaltyPerUnitEur": 1.20,
+    "contractRef": "CTR-FR-SDX-2026",
+    "status": "firm",
+    "notes": "Highest per-unit penalty in the book at EUR 1.20 and a 98% SLA into schools and hospitals. The 30-day specification-change notice period in this contract rules out any emergency reformulation on Sodexo volume."
+  },
+  {
+    "id": "COM-2026-014",
+    "customerId": "CUST-011",
+    "skuId": "SKU-DES-004",
+    "committedUnits": 132000,
+    "deliveryDate": "2026-10-06",
+    "penaltyPerUnitEur": 1.15,
+    "contractRef": "CTR-BE-COL-2026",
+    "status": "at_risk",
+    "notes": "Private-label contract with a termination right if fill rate falls below 95% in two consecutive quarters. Lowest-margin affected SKU at 26.4% but the highest contractual consequence, which is exactly the case the allocation policy warns about."
+  },
+  {
+    "id": "COM-2026-015",
+    "customerId": "CUST-011",
+    "skuId": "SKU-YOG-010",
+    "committedUnits": 74000,
+    "deliveryDate": "2026-10-20",
+    "penaltyPerUnitEur": 1.15,
+    "contractRef": "CTR-BE-COL-2026",
+    "status": "at_risk",
+    "notes": "Conflict case: SKU-YOG-010 is the primary decampaigning candidate at Ghent on margin-per-kilogram grounds, but it sits under the harshest penalty clause in the book. Requires Commercial Director adjudication before the production plan is frozen."
+  }
+]
