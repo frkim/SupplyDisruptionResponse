@@ -1,0 +1,126 @@
+name: Deploy to Azure Container Apps
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '**/*.md'
+      - 'docs/**'
+      - 'LICENSE'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  AZURE_RESOURCE_GROUP: rg-supply-disruption
+  CORE_DEPLOYMENT_NAME: sdr-core
+  IMAGE_REPOSITORY: supply-disruption
+
+jobs:
+  deploy:
+    name: Build image and update container app
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Azure login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Read core infrastructure outputs
+        id: core
+        shell: bash
+        run: |
+          set -euo pipefail
+          outputs=$(az deployment group show \
+            --resource-group "$AZURE_RESOURCE_GROUP" \
+            --name "$CORE_DEPLOYMENT_NAME" \
+            --query properties.outputs -o json)
+
+          # Surface every core output as a step output, e.g. steps.core.outputs.acrName.
+          echo "$outputs" | jq -r 'to_entries[] | "\(.key)=\(.value.value)"' >> "$GITHUB_OUTPUT"
+
+      - name: Build image in Azure Container Registry
+        id: build
+        shell: bash
+        env:
+          ACR_NAME: ${{ steps.core.outputs.acrName }}
+          ACR_LOGIN_SERVER: ${{ steps.core.outputs.acrLoginServer }}
+        run: |
+          set -euo pipefail
+          tag="v$(date -u +%Y%m%d%H%M%S)-${GITHUB_SHA::7}"
+          az acr build \
+            --registry "$ACR_NAME" \
+            --image "${IMAGE_REPOSITORY}:${tag}" \
+            --image "${IMAGE_REPOSITORY}:latest" \
+            --file Dockerfile \
+            .
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+          echo "image=${ACR_LOGIN_SERVER}/${IMAGE_REPOSITORY}:${tag}" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy container app
+        id: app
+        shell: bash
+        run: |
+          set -euo pipefail
+          appUrl=$(az deployment group create \
+            --resource-group "$AZURE_RESOURCE_GROUP" \
+            --name "sdr-app-${{ steps.build.outputs.tag }}" \
+            --template-file infra/app.bicep \
+            --parameters \
+              containerAppEnvironmentId='${{ steps.core.outputs.containerAppEnvironmentId }}' \
+              acrLoginServer='${{ steps.core.outputs.acrLoginServer }}' \
+              containerImage='${{ steps.build.outputs.image }}' \
+              identityId='${{ steps.core.outputs.identityId }}' \
+              identityClientId='${{ steps.core.outputs.identityClientId }}' \
+              aiProjectEndpoint='${{ steps.core.outputs.aiProjectEndpoint }}' \
+              openAiEndpoint='${{ steps.core.outputs.openAiEndpoint }}' \
+              modelDeploymentName='${{ steps.core.outputs.modelDeploymentName }}' \
+              embeddingDeploymentName='${{ steps.core.outputs.embeddingDeploymentName }}' \
+              cosmosEndpoint='${{ steps.core.outputs.cosmosEndpoint }}' \
+              searchEndpoint='${{ steps.core.outputs.searchEndpoint }}' \
+              storageBlobEndpoint='${{ steps.core.outputs.storageBlobEndpoint }}' \
+              appInsightsConnectionString='${{ steps.core.outputs.appInsightsConnectionString }}' \
+            --query properties.outputs.appUrl.value -o tsv)
+          echo "appUrl=$appUrl" >> "$GITHUB_OUTPUT"
+
+      - name: Verify the new revision is serving traffic
+        shell: bash
+        run: |
+          set -euo pipefail
+          url="${{ steps.app.outputs.appUrl }}/api/health"
+          for attempt in $(seq 1 30); do
+            code=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 15 "$url" || echo 000)
+            if [ "$code" = "200" ]; then
+              echo "Health check passed on attempt $attempt."
+              exit 0
+            fi
+            echo "Attempt $attempt: HTTP $code — retrying in 10s."
+            sleep 10
+          done
+          echo "::error::Health check never returned 200 for $url"
+          exit 1
+
+      - name: Job summary
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "### Deployment"
+            echo ""
+            echo "| Field | Value |"
+            echo "| --- | --- |"
+            echo "| Commit | \`${GITHUB_SHA::7}\` |"
+            echo "| Image | \`${{ steps.build.outputs.image }}\` |"
+            echo "| App URL | ${{ steps.app.outputs.appUrl }} |"
+          } >> "$GITHUB_STEP_SUMMARY"
